@@ -7,20 +7,26 @@ public class Bullet : MonoBehaviour
     public GameObject hitEffect;
     public float lifeTime;
     public GameObject explosion;
+    public int damage;
     private void Start()
     {
-        //Destroy(gameObject, lifeTime);
         Invoke("DestroyBullet", lifeTime);
     }
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity);
-        Destroy(effect, 0.4f);
-        Destroy(gameObject);
-    }
     void DestroyBullet()
-    {
-        Instantiate(explosion, transform.position, Quaternion.identity); // quat, et ei oleks rotationit
+    {      
         Destroy(gameObject);
+        // quat, et ei oleks rotationit
+        Instantiate(explosion, transform.position, Quaternion.identity);
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Enemy")
+        {
+            collision.GetComponent<Enemy>().TakeDamage(damage);
+            GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity);
+            Destroy(effect, 0.4f);
+            Destroy(gameObject);
+            DestroyBullet();
+        }
     }
 }

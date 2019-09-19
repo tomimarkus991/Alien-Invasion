@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4190416329217437817}
   - component: {fileID: 4190416329217437816}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 4190416329696162066}
   - component: {fileID: 4190416329696162065}
   - component: {fileID: 5777439803318537762}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: gun2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -178,7 +178,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 6381720863121614615, guid: efb05feb7bf77b14e93f5c1a41a2ccb5,
     type: 3}
   timeBetweenShots: 0.1
-  bulletForce: 1
+  bulletForce: 8
 --- !u!1 &4190416329776824518
 GameObject:
   m_ObjectHideFlags: 0
@@ -189,7 +189,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4190416329776824517}
   - component: {fileID: 4190416329776824516}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -273,7 +273,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4190416330273892576}
   - component: {fileID: 4190416330273892591}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -356,7 +356,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4190416330393655307}
   - component: {fileID: 4190416330393655306}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -438,11 +438,12 @@ GameObject:
   - component: {fileID: 4190416330602199691}
   - component: {fileID: 4190416330602199692}
   - component: {fileID: 4190416330602199689}
-  - component: {fileID: 4190416330602199688}
   - component: {fileID: 8731431941960888414}
-  m_Layer: 0
+  - component: {fileID: 4190416330602199688}
+  - component: {fileID: 656458233927883894}
+  m_Layer: 8
   m_Name: MediumSoldier
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -502,21 +503,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &4190416330602199688
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4190416330602199693}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf5557b937cd32a4083cf6684cad7520, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 5
-  rb: {fileID: 4190416330602199689}
-  cam: {fileID: 0}
 --- !u!61 &8731431941960888414
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -543,6 +529,34 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.1768465, y: 1.6110554}
   m_EdgeRadius: 0
+--- !u!114 &4190416330602199688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4190416330602199693}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf5557b937cd32a4083cf6684cad7520, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 8
+  rb: {fileID: 4190416330602199689}
+  cam: {fileID: 0}
+--- !u!114 &656458233927883894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4190416330602199693}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2aab25be4f5a9d44be15de902730715, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 40
 --- !u!1 &4190416330817595694
 GameObject:
   m_ObjectHideFlags: 0
@@ -552,7 +566,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4190416330817595693}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
